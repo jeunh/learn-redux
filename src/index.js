@@ -6,8 +6,10 @@ import reportWebVitals from './reportWebVitals';
 import { createStore } from 'redux';
 import rootReducer from './modules';
 import { Provider } from 'react-redux';
+import { composeWithDevTools } from 'redux-devtools-extension'; // 리덕스 개발자 도구
 
-const store = createStore(rootReducer);
+const store = createStore(rootReducer, composeWithDevTools());
+// composeWithDevTools를 사용하여 리덕스 개발자 도구 활성화
 // console.log(store.getState());
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
